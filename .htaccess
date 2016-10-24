@@ -1,0 +1,18 @@
+Options -Indexes
+
+Options +FollowSymLinks
+RewriteEngine on
+RewriteRule ^view/MENU$ view/menu.php
+RewriteRule ^view/ADMINISTRATOR$ view/administrator.php
+RewriteRule ^view/ENGINEER$ view/engineer.php
+RewriteRule ^view/SALES$ view/sales_person.php
+RewriteRule ^view/SALES_GROUP$ view/sales_group_market.php
+RewriteRule ^view/OPPORTUNITY$ view/opportunity.php
+RewriteRule ^view/RFQ$ view/request_for_quotation.php
+RewriteRule ^view/DRAW$ view/drawing_approval.php
+RewriteRule ^view/CODE$ view/transformer_code.php
+RewriteRule ^view/PIPELINE$ view/pipeline_monitoring.php
+RewriteRule ^view/SALES_ORDER$ view/sales_order.php
+RewriteRule ^view/PURCHASE_ORDER$ view/sales_purchase_order.php
+RewriteRule ^view/ORDER$ view/order_pipeline.php
+RewriteRule ^REG$ register.php
