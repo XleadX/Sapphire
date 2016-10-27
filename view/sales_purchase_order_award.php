@@ -74,7 +74,7 @@ $sales_email	= $sales_data['SalesEmail'];
 		</div>
 	</div>
 	<div class="fitem">
-		<br><br><br><br><br>
+		<br><br><br><br><br><br>
 		<input id="currentFAT" type="hidden" value="<?php echo $data['FAT'] ?>">
 		<div style="margin-bottom:80px"></div>
 		<div>

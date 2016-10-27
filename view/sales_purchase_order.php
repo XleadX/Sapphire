@@ -50,25 +50,6 @@
 	</table>
 	<div id="toolbar_order" style="padding:5px">
 		<a href="javascript:void(0)" class="easyui-linkbutton" style="width:100px; height:25px" data-options="plain:false" onclick="POAward()">Create PO</a>
-		<!--
-		<a href="javascript:void(0)" class="easyui-menubutton" style="width:100px; height:25px" data-options="duration:60000, plain:false, menu:'#filter_order'">Filter</a>
-		<div id="filter_order" class="menu-content" style="padding:15px; background-color:#F4F4F4">
-			<b>Field :</b>
-			<select id="field_order" name="field_order" style="width: 150px">
-				<option value="PipelineNumber" selected>All</option>
-				<option value="RFQStatus">RFQ Status</option>
-				<option value="CreateId">Sales</option>
-			</select>
-			&nbsp;<b>Value :</b>
-			<select id="value_order" name="value_order" style="width:150px">
-				<option value="%">All</option>
-			</select>
-			<input id="active_order" type="hidden" value="Yes">
-			&nbsp;<b>Year :</b>
-			<input id="value_year" name="value_year" type="number" style="width:60px; text-align:center" value="2016">
-			<input type="button" href="javascript:void(0)" onclick="filterOrder()" value="Filter" id="filter">
-		</div>
-		-->
 		<input id="search" style="border:1px solid; font-style:italic; height:25px; float:right; text-align:center" placeholder="Search pipeline no..." onkeypress="return filter(event)">
 	</div>
 	<table id="dg_purchase_order_detail" class="easyui-datagrid" style="width:1366px"

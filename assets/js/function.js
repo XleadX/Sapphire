@@ -769,9 +769,9 @@ function changeFAT(){
 
 function POAward(){
 	var row = $('#dg_order').datagrid('getSelected');
-	if(row.RFQStatus != 'Answer' && row.Approved == 'No'){
+	if(row.RFQ == 'Yes' && row.Answer == 'No' && row.Approved == 'No'){
 		alert('Please approve pipeline first !');
-	} else if(row.RFQStatus != 'Answer' && row.Approved == 'Yes'){
+	} else if(row.RFQ == 'Yes' && row.Answer == 'No' && row.Approved == 'Yes'){
 		alert('Please answer pipeline first !');
 	} else {
 		$('#dlg_po_award').dialog('open');
