@@ -17,7 +17,7 @@ $stmt->bindParam(':username', $username);
 $stmt->execute();
 $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 foreach($result as $key){
-	$change_password	= $key['password'];
+	$change_password = $key['password'];
 }
 
 // Mengambil data TopLevel

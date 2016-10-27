@@ -186,17 +186,4 @@ function month_year(){
 	}
 	return $date;
 }
-
-function sm_group_ict($sm_email){
-	include 'connection.php';
-	
-	$stmt = $conn->prepare("SELECT SalesDept.SalesGroupId AS SalesGroupId FROM SalesDept JOIN Sales ON SalesDept.SalesId = Sales.SalesId WHERE Sales.SalesEmail = :sm_email");
-	$stmt->bindParam(':sm_email', $sm_email);
-	$stmt->execute();
-	
-	$result = $stmt->fetch();
-	$sm_email = $result['SalesGroupId'];
-	
-	return $sm_email;
-}
 ?>

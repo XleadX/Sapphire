@@ -557,11 +557,26 @@ function answerCode(){
 }
 
 // Fungsi Pipeline Monitoring
-		function newSales(){
-			$('#dlg_sales').dialog('open').dialog('setTitle','New Sales');
-			$('#form_sales').form('clear');
-			url = 'sales_save.php';
-		}
+function updateOrderMonitoring(){
+	var row = $('#dg_pipeline').datagrid('getSelected');
+	if(row.PO == 'Yes'){
+		alert('Pipeline can\'t be revised !');
+	} else if(row.Approved != 'Yes'){
+		alert('Please approve pipeline first !');
+	} else {
+		$('#dlg_change_pipeline').dialog('open');
+		var number = row.PipelineNumber;
+		$.ajax({
+			type: "GET",
+			url: "order_pipeline_update.php",
+			dataType: "html",
+			data: "PipelineNumber=" + number,
+			success: function(data){                    
+				$("#pipeline_update").html(data);
+			}
+		});
+	}
+}
 		
 function showPipelineDetail(){
 	var row = $('#dg_pipeline').datagrid('getSelected');
@@ -702,21 +717,21 @@ function newOrder(){
 }
 
 function updateOrder(){
-		var row = $('#dg_order').datagrid('getSelected');
-		if(row){
-			$('#dlg_change_pipeline').dialog('open');
-			var number = $('#number').val();
-			$.ajax({
-				type: "GET",
-				url: "order_pipeline_update.php",
-				dataType: "html",
-				data: "PipelineNumber=" + number,
-				success: function(data){                    
-					$("#pipeline_update").html(data);
-				}
-			});
-		}
+	var row = $('#dg_order').datagrid('getSelected');
+	if(row){
+		$('#dlg_change_pipeline').dialog('open');
+		var number = $('#number').val();
+		$.ajax({
+			type: "GET",
+			url: "order_pipeline_update.php",
+			dataType: "html",
+			data: "PipelineNumber=" + number,
+			success: function(data){                    
+				$("#pipeline_update").html(data);
+			}
+		});
 	}
+}
 
 function changeOpportunity(){
 	var row = $('#dg_order').datagrid('getSelected');

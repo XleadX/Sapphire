@@ -125,7 +125,7 @@ Pipeline Number		: '.$number.'
 Business Unit		: '.$bugroup.'
 Project Name		: '.$project.'
 Customer		: '.$customer.'
-Market / Sales		: '.$market.' / '.ucwords($create_id).'
+Market / Sales		: '.$market.' / '.ucwords($username).'
 Notes			: '.$notes.'
 Delivery Terms		: '.$delivery_terms.' / '.$destination.'
 FAT			: '.$fat.'
@@ -150,7 +150,7 @@ Tescom			: '.$tescom.'
 
 // Fungsi kirim email
 	$subject = $approval.'Sapphire - '.$status.' / '.$customer.' / '.$project.' / '.$number.'-'.$revision_update.'';
-	$mail->setFrom($sender, ucwords($create_id).' - Sapphire');
+	$mail->setFrom($sender, ucwords($username).' - Sapphire');
 	foreach($eng_email as $to_eng){
 		$mail->AddAddress($to_eng['EngineerEmail']);
 	}

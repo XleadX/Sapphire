@@ -17,7 +17,7 @@
 <script type="text/javascript" src="assets/js/jquery.easyui.min.js"></script>
 <style>
 body {
-	background: #CCCCCC no-repeat center center fixed;
+	background: #337AB7 no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;

@@ -46,6 +46,14 @@ if($group == 'SA'){
 }
 ?>
 
+<style>
+.fitem label{
+	display: inline-block;
+	width: 135px;
+	font-weight: bold;
+}
+</style>
+
 <div style="width:100%; padding-top:40px">
 	<table id="dg_pipeline" class="easyui-datagrid"
 		url="../model/pipeline_monitoring_data.php" pageSize="15" pageList="[10,15,20,30,50]"
@@ -94,6 +102,7 @@ if($group == 'SA'){
 		<a id="historyMonitoring" class="easyui-linkbutton" style="width:100px; height:25px" data-options="plain:false" onclick="showHistory()">History</a>
 		<a id="reportMonitoring" class="easyui-linkbutton" style="width:100px; height:25px" data-options="plain:false" onclick="$('#dlg_export_monitoring').dialog('open')">Report</a>
 		<?php echo $approve; ?>
+		<a id="revisionMonitoring" class="easyui-linkbutton" style="width:100px; height:25px" data-options="plain:false" onclick="updateOrderMonitoring()">Revision</a>
 		<a id="backMonitoring" class="easyui-linkbutton" style="width:100px; height:25px; display:none" data-options="plain:false" onclick="showMonitoring()">Back</a>
 	</div>
 
@@ -134,6 +143,14 @@ if($group == 'SA'){
 	<div id="dlg-buttons-export-monitoring">
 		<button type="submit" form="monitoringReport" class="easyui-linkbutton c6" iconCls="icon-ok" style="width:90px; font-family:Verdana,Arial,Sans-Serif" onclick="$('#dlg_export_monitoring').dialog('close')">Export</button>
 		<a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-cancel" onclick="$('#dlg_export_monitoring').dialog('close');" style="width:90px">Cancel</a>
+	</div>
+	
+	<div id="dlg_change_pipeline" class="easyui-dialog" title="Update Pipeline" style="width:710px; height:auto; padding: 5px 10px 5px 10px; top:10%" buttons="#dlg-buttons-change-pipeline" data-options="modal:true,closed:true,shadow:false">
+		<div id="pipeline_update"></div>
+	</div>
+	<div id="dlg-buttons-change-pipeline">
+		<button type="submit" form="update_pipeline" class="easyui-linkbutton c6" iconCls="icon-ok" style="width:90px; font-family:Verdana,Arial,Sans-Serif">Update</button>
+		<button class="easyui-linkbutton" iconCls="icon-cancel" onclick="$('#dlg_change_pipeline').dialog('close');" style="width:90px; font-family:Verdana,Arial,Sans-Serif">Cancel</button>
 	</div>
 </div>
 
